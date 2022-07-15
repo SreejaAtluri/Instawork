@@ -1,0 +1,47 @@
+{% extends 'Instaworkapp/base.html' %}
+{% block body_block %}
+
+<h1 style="    text-align: center;">Edit page</h1>
+<div class="listclass" style="    background: aliceblue;     overflow: auto;">
+    <h2>Edit team member</h2>
+    <h4>Edit contact info and role</h4>
+    <div  style="padding: 2%; border: 1px solid black;">
+        <form action="" method="post">
+        {% csrf_token %}
+        <div><h4>Info</h4></div>
+        <div>{{ editform.firstname }}</div><br>
+        <div>{{ editform.lastname }}</div><br>
+            {% if editform.email.errors %}
+
+                <div> {{ editform.email.errors }} </div>
+                <div>{{ editform.email }}</div><br>
+            {% else %}
+                 <div>{{ editform.email }}</div><br>
+        {% endif %}
+            {% if editform.phoneNumber.errors %}
+
+                <div> {{ editform.phoneNumber.errors }} </div>
+                <div>{{ editform.phoneNumber }}</div><br>
+            {% else %}
+                 <div>{{ editform.phoneNumber }}</div><br>
+        {% endif %}
+
+        <div>Role{{ editform.role }}</div><br>
+{#        <div class="my-button" style="float: left; margin: -1%;">#}
+            <a href="{% url 'Instaworkapp:deleteview' id=data.id %}" class="btn btn-danger">Delete</a>
+{#                <input type="submit" class="" value=""/>#}
+{#        </div>#}
+
+        <div class="my-button" style="float: right; margin: -1%;">
+            <input type="submit" class="btn btn-primary" value="Save"/>
+        </div>
+    </form>
+{#    </div>#}
+{#      {% if error %}#}
+{#  <div class="alert alert-dismissible alert-danger">#}
+{#    <strong>Oh snap!</strong>{{ editform.errors }}#}
+{#  </div>#}
+{#  {% endif %}#}
+
+</div>
+{% endblock %}

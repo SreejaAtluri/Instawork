@@ -1,0 +1,35 @@
+{% extends 'Instaworkapp/base.html' %}
+{% block body_block %}
+
+<h1 style="    text-align: center;">List page</h1>
+<div class="listclass" style="    background: aliceblue;">
+<div style="float: right; font-size: xxx-large;"><a href="{% url 'Instaworkapp:addview' %}" class="">+</a></div>
+<br>
+    <h2>Team members</h2>
+    {% if total_list_count == 1 %}
+        <h3>You have {{ total_list_count }} team member</h3>
+    {% elif total_list_count >= 1 %}
+        <h3>You have {{ total_list_count }} team members</h3>
+    {% else %}
+        <h3>You have no team members</h3>
+    {% endif %}
+    <div>
+        {% if total_list %}
+            {% for var in total_list %}
+                <hr />
+                <div id="id_{{ var.id }}">
+                <div style="display: none;"> {{ var.id }}</div>
+                    {% if var.role == 1 %}
+                        <a href="{% url 'Instaworkapp:editview' id=var.id %}"><b>{{ var.firstname}} {{ var.lastname }} {admin}</b></a>
+                    {% else %}
+                        <a href="{% url 'Instaworkapp:editview' id=var.id %}"><b>{{ var.firstname}} {{ var.lastname }}</b></a>
+                    {% endif %}
+                    <p>{{ var.phoneNumber }}</p>
+                    <p>{{ var.email }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+</div>
+{% endblock %}

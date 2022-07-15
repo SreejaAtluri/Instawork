@@ -1,0 +1,17 @@
+{% extends 'Instaworkapp/base.html' %}
+{% block body_block %}
+
+<h1 style="    text-align: center;">Delete page</h1>
+<div class="listclass" style="    background: aliceblue;     overflow: auto;">
+    <h2>Delete team member</h2>
+    <h4>Are you sure you want to delete the team member?</h4>
+
+    <form action="{% url 'Instaworkapp:deleteview' id=data.id %}" method = "POST">
+        {% csrf_token %}
+        <a href="{% url 'Instaworkapp:listview' %}">Cancel</a>
+
+        <input type="submit" name="Confirm" class="btn btn-primary">
+
+    </form>
+</div>
+{% endblock %}

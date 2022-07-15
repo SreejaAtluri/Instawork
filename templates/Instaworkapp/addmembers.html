@@ -1,0 +1,35 @@
+{% extends 'Instaworkapp/base.html' %}
+{% block body_block %}
+
+<h1 style="    text-align: center;">Add page</h1>
+<div class="listclass" style="    background: aliceblue;     overflow: auto;">
+    <h2>Add a team member</h2>
+    <h4>Set email phone number and role</h4>
+    <div  style="padding: 2%; border: 1px solid black;">
+        <form action="" method="post">
+        {% csrf_token %}
+        <div><h4>Info</h4></div>
+        <div>{{ addform.firstname }}</div><br>
+        <div>{{ addform.lastname }}</div><br>
+            {% if addform.email.errors %}
+
+                <div> {{ addform.email.errors }} </div>
+                <div>{{ addform.email }}</div><br>
+            {% else %}
+                 <div>{{ addform.email }}</div><br>
+        {% endif %}
+            {% if addform.phoneNumber.errors %}
+
+                <div> {{ addform.phoneNumber.errors }} </div>
+                <div>{{ addform.phoneNumber }}</div><br>
+            {% else %}
+                 <div>{{ addform.phoneNumber }}</div><br>
+        {% endif %}
+        <div>Role{{ addform.role }}</div><br>
+        <div class="my-button" style="float: right; margin: -1%;">
+            <input type="submit" class="btn btn-primary" value="Save"/>
+        </div>
+    </form>
+    </div>
+</div>
+{% endblock %}
