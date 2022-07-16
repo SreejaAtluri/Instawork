@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Instaworkapp.apps.InstaworkappConfig',
     'phonenumber_field',
-    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
