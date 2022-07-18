@@ -1,5 +1,6 @@
 {% extends 'Instaworkapp/base.html' %}
 {% block body_block %}
+{% load static %}
 
 <h3 style="    text-align: center;">List page</h3>
 <div class="listclass" style="    background: aliceblue; overflow: auto; padding: 1%; margin: 3%;">
@@ -17,7 +18,13 @@
         {% if total_list %}
             {% for var in total_list %}
                 <hr />
-                <div id="id_{{ var.id }}">
+                <div class="container" style="margin: 0px;">
+                  <div class="row">
+                    <div class="col-sm-1">
+                      <img src="{% static '/images/avatar.jpg' %}" alt="Avatar" class="avatar" style="  vertical-align: middle;  width: 50px;  height: 50px;  border-radius: 50%;">
+                    </div>
+                    <div class="col-sm-11">
+                      <div id="id_{{ var.id }}">
                 <div style="display: none;"> {{ var.id }}</div>
                     {% if var.role == 1 %}
                         <a href="{% url 'Instaworkapp:editview' id=var.id %}"><b>{{ var.firstname}} {{ var.lastname }} {admin}</b></a>
@@ -27,6 +34,10 @@
                     <p>{{ var.phoneNumber }}</p>
                     <p>{{ var.email }}</p>
                 </div>
+                    </div>
+                  </div>
+                </div>
+
             {% endfor %}
         {% endif %}
 
