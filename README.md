@@ -33,6 +33,7 @@ migrate Instaworkapp
 > After successful migrations, run the server using the command
 runserver
 > A url will be generated after running the server where we can access the project.
+> https://github.com/SreejaAtluri/Instawork/issues/1#issue-1308300447
 
 ## **Test cases**
 ### List page
