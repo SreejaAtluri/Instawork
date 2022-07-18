@@ -1,4 +1,4 @@
-#Table of Contents
+# **Table of Contents**
 1. Description
 2. Technologies and Frameworks Used
 3. Installation and Setup
