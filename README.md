@@ -1,4 +1,4 @@
-Table of Contents
+#Table of Contents
 1. Description
 2. Technologies and Frameworks Used
 3. Installation and Setup
@@ -49,7 +49,7 @@ Edit page
 
 
 
-In this page, the user can edit the details of that particular team member in which the user can also change the role. After changing the values on click of save button, the details get updated and redirects to the list page. On click of delete button, it redirects to a new page ìDelete pageî.
+In this page, the user can edit the details of that particular team member in which the user can also change the role. After changing the values on click of save button, the details get updated and redirects to the list page. On click of delete button, it redirects to a new page ‚ÄúDelete page‚Äù.
 
 Delete Page
 
@@ -61,6 +61,6 @@ In this page, the user gets an option to either confirm the delete option or to 
 Test Data
 Sample data is considered to test all functional parts of the project.
 Contact
-Sreeja Atluri:†atluri1@uwindsor.ca
+Sreeja Atluri:¬†atluri1@uwindsor.ca
 
 
