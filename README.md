@@ -33,13 +33,12 @@ migrate Instaworkapp
 > After successful migrations, run the server using the command
 runserver
 > A url will be generated after running the server where we can access the project.
-> https://github.com/SreejaAtluri/Instawork/issues/1#issue-1308300447
+> ![image](https://user-images.githubusercontent.com/26114150/179570270-3c926779-dc23-43d9-ae46-6fd1c7ada358.png)
 
 ## **Test cases**
 ### List page
 
 This page lists the team members with subheading on number of team members. If the team member is an admin, it is listed next to their name. On click of the name of the team member, it will redirect to edit page where the user can edit the details of that particular team member. On click of the add button, it will redirect to add page where the user can add new team members.
-
 
 ### Add page
 
