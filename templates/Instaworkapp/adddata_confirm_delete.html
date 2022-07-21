@@ -4,13 +4,15 @@
 <h3 style="text-align: center;">Delete page</h3>
 <div class="listclass" style="    background: aliceblue;     overflow: auto; padding: 1%; margin: 3%;">
     <h2>Delete team member</h2>
-    <h4>Are you sure you want to delete the team member?</h4>
 
-    <form action="{% url 'Instaworkapp:deleteview' id=data.id %}" method = "POST">
+
+    <form action="." method = "POST">
         {% csrf_token %}
+        <h4>Are you sure you want to delete the team member?</h4>
+        <input type="submit" name="Confirm" class="btn btn-primary">
         <a href="{% url 'Instaworkapp:listview' %}">Cancel</a>
 
-        <input type="submit" name="Confirm" class="btn btn-primary">
+
 
     </form>
 </div>

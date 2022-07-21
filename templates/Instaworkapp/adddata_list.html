@@ -7,16 +7,16 @@
 <div style="float: right; font-size: xxx-large;"><a href="{% url 'Instaworkapp:addview' %}" class="">+</a></div>
 <br>
     <h2>Team members</h2>
-    {% if total_list_count == 1 %}
-        <h3>You have {{ total_list_count }} team member</h3>
-    {% elif total_list_count >= 1 %}
-        <h3>You have {{ total_list_count }} team members</h3>
+    {% if nobjects == 1 %}
+        <h3>You have {{ nobjects }} team member</h3>
+    {% elif nobjects >= 1 %}
+        <h3>You have {{ nobjects }} team members</h3>
     {% else %}
         <h3>You have no team members</h3>
     {% endif %}
     <div>
-        {% if total_list %}
-            {% for var in total_list %}
+        {% if object_list %}
+            {% for adddata in object_list %}
                 <hr />
                 <div class="container" style="margin: 0px;">
                   <div class="row">
@@ -24,15 +24,15 @@
                       <img src="{% static '/images/avatar.jpg' %}" alt="Avatar" class="avatar" style="  vertical-align: middle;  width: 50px;  height: 50px;  border-radius: 50%;">
                     </div>
                     <div class="col-sm-11">
-                      <div id="id_{{ var.id }}">
-                <div style="display: none;"> {{ var.id }}</div>
-                    {% if var.role == 1 %}
-                        <a href="{% url 'Instaworkapp:editview' id=var.id %}"><b>{{ var.firstname}} {{ var.lastname }} {admin}</b></a>
+                      <div id="id_{{ adddata.id }}">
+                <div style="display: none;"> {{ adddata.id }}</div>
+                    {% if adddata.role == 1 %}
+                        <a href="{% url 'Instaworkapp:updateview' id=adddata.id %}"><b>{{ adddata.firstname}} {{ adddata.lastname }} {admin}</b></a>
                     {% else %}
-                        <a href="{% url 'Instaworkapp:editview' id=var.id %}"><b>{{ var.firstname}} {{ var.lastname }}</b></a>
+                        <a href="{% url 'Instaworkapp:updateview' id=adddata.id %}"><b>{{ adddata.firstname}} {{ adddata.lastname }}</b></a>
                     {% endif %}
-                    <p>{{ var.phoneNumber }}</p>
-                    <p>{{ var.email }}</p>
+                    <p>{{ adddata.phoneNumber }}</p>
+                    <p>{{ adddata.email }}</p>
                 </div>
                     </div>
                   </div>

@@ -8,29 +8,29 @@
     <div  style="padding: 2%; border: 1px solid black;">
         <form action="" method="post">
         {% csrf_token %}
-        <div><h4>Infowqdewdwefw</h4></div>
-        <div>{{ editform.firstname }}</div><br>
-        <div>{{ editform.lastname }}</div><br>
-            {% if editform.email.errors %}
+        <div><h4>Info</h4></div>
+        <div>{{ form.firstname }}</div><br>
+        <div>{{ form.lastname }}</div><br>
+            {% if form.email.errors %}
 
-                <div> {{ editform.email.errors }} </div>
-                <div>{{ editform.email }}</div><br>
+                <div> {{ form.email.errors }} </div>
+                <div>{{ form.email }}</div><br>
             {% else %}
-                 <div>{{ editform.email }}</div><br>
+                 <div>{{ form.email }}</div><br>
         {% endif %}
-            {% if editform.phoneNumber.errors %}
+            {% if form.phoneNumber.errors %}
 
-                <div> {{ editform.phoneNumber.errors }} </div>
-                <div>{{ editform.phoneNumber }}</div><br>
+                <div> {{ form.phoneNumber.errors }} </div>
+                <div>{{ form.phoneNumber }}</div><br>
             {% else %}
-                 <div>{{ editform.phoneNumber }}</div><br>
+                 <div>{{ form.phoneNumber }}</div><br>
         {% endif %}
 
-        <div>Role{{ editform.role }}</div><br>
+        <div>Role{{ form.role }}</div><br>
 
         <div class="my-button" style="float: left; margin: -1%;">
-            <a href="{% url 'Instaworkapp:deleteview' id=data.id %}" class="btn btn-danger">Delete</a>
-                <input type="submit" class="" value=""/>
+            <a href="{% url 'Instaworkapp:deleteview' id=form.instance.id %}" class="btn btn-danger">Delete</a>
+{#                <input type="submit" class="" value=""/>#}
         </div>
 
         <div class="my-button" style="float: right; margin: -1%;">

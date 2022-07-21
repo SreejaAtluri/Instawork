@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+from django.urls import reverse
 from django.utils.safestring import mark_safe
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -16,3 +17,6 @@ class Adddata(models.Model):
 
     def __str__(self):
         return f"{self.firstname}"
+
+    def get_absolute_url(self):
+        return reverse("Instaworkapp:listview")

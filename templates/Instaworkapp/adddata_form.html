@@ -9,23 +9,23 @@
         <form action="" method="post">
         {% csrf_token %}
         <div><h4>Info</h4></div>
-        <div>{{ addform.firstname }}</div><br>
-        <div>{{ addform.lastname }}</div><br>
-            {% if addform.email.errors %}
+        <div>{{ form.firstname }}</div><br>
+        <div>{{ form.lastname }}</div><br>
+            {% if form.email.errors %}
 
-                <div> {{ addform.email.errors }} </div>
-                <div>{{ addform.email }}</div><br>
+                <div> {{ form.email.errors }} </div>
+                <div>{{ form.email }}</div><br>
             {% else %}
-                 <div>{{ addform.email }}</div><br>
+                 <div>{{ form.email }}</div><br>
         {% endif %}
-            {% if addform.phoneNumber.errors %}
+            {% if form.phoneNumber.errors %}
 
-                <div> {{ addform.phoneNumber.errors }} </div>
-                <div>{{ addform.phoneNumber }}</div><br>
+                <div> {{ form.phoneNumber.errors }} </div>
+                <div>{{ form.phoneNumber }}</div><br>
             {% else %}
-                 <div>{{ addform.phoneNumber }}</div><br>
+                 <div>{{ form.phoneNumber }}</div><br>
         {% endif %}
-        <div>Role{{ addform.role }}</div><br>
+        <div>Role{{ form.role }}</div><br>
         <div class="my-button" style="float: right; margin: -1%;">
             <input type="submit" class="btn btn-primary" value="Save"/>
         </div>
